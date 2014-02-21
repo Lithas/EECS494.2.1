@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{BCC1E5F3-CB29-0C64-076B-E96E61E5154F}</ProjectGuid>
+	<ProjectGuid>{1EC1ED84-D79B-85A6-C4DB-592941110CCE}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scene1Stuff\rotateBarrel.cs" />
      <Compile Include="Assets\Scene1Stuff\rotateTurret.cs" />
      <Compile Include="Assets\__Scripts\OptionCtrl.cs" />
+     <Compile Include="Assets\__Scripts\PauseMenu.cs" />
      <Compile Include="Assets\__Scripts\TextCtrl.cs" />
      <None Include="Assets\_Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\_Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
