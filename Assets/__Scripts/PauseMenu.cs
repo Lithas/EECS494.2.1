@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿// THIS IS NOT MY WORK
+// I used some of it as reference, but it uses teh OnGUI functions, mine doesnt
+// if it's still here I screwed up... please don't hate me
+//-LUKE ANDERSoN
+
+
+using UnityEngine;
 using System.Collections;
 
 public class PauseMenu : MonoBehaviour

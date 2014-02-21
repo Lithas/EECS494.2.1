@@ -51,6 +51,7 @@
      <Compile Include="Assets\__Scripts\OptionCtrl.cs" />
      <Compile Include="Assets\__Scripts\PauseMenu.cs" />
      <Compile Include="Assets\__Scripts\TextCtrl.cs" />
+     <Compile Include="Assets\optControl.cs" />
      <None Include="Assets\_Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\_Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
      <None Include="Assets\_Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />

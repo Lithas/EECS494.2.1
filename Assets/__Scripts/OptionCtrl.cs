@@ -51,7 +51,7 @@ public class OptionCtrl : MonoBehaviour {
 
 			GameObject tag = GameObject.CreatePrimitive(PrimitiveType.Quad);
 			tag.transform.localScale = new Vector3(1,.5f,.5f);
-			tag.transform.parent = slate.transform;
+			//tag.transform.parent = slate.transform;
 			tagLoc.x += i+.05f;
 			tag.transform.position = slate.transform.position + tagLoc;
 			tag.renderer.material = tagMaterial;
@@ -68,7 +68,7 @@ public class OptionCtrl : MonoBehaviour {
 
 			int fontSize = maxFont - fontMod;
 
-			tMesh.fontSize = fontSize;
+			tMesh.fontSize = 12;//fontSize;
 			
 			label.transform.parent = tag.transform;
 			label.transform.position = tag.transform.position + labelOffset;
@@ -103,6 +103,7 @@ public class OptionCtrl : MonoBehaviour {
 		foreach(GameObject slate in slates){
 			if(i != curSlate)
 				slate.SetActive(false);
+			i++;
 		
 		}
 	}
