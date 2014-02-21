@@ -7,7 +7,8 @@ public class OptionCtrl : MonoBehaviour {
 	[System.Serializable]
 	public class Options{
 		public string 		optionName;
-		public string		value;
+		public int			value;
+		public int			maxValue;
 	}
 
 	[System.Serializable]
@@ -30,10 +31,14 @@ public class OptionCtrl : MonoBehaviour {
 	private Vector3 cubeDimensions = 	new Vector3(10, 9, 1);
 	private Vector3 tagLoc =			new Vector3(-4.3f,4.5f, -.6f); 
 	private Vector3 labelOffset = 		new Vector3(0.07379949f,-0.1475982f,-0.4176922f);
+	private Vector3 optOffset = 		new Vector3(0f,-.5f,0f);
 	private int	maxFont = 				35;
+
+	private int curSlate = 				0;
+	private List<GameObject> slates = new List<GameObject> ();
+	private List<List<GameObject>> options = new List<List<GameObject>> ();
 	// Use this for initialization
 	void Start () {
-		List<GameObject> slates = new List<GameObject> ();
 		int i = 0;
 		foreach(Tab tab in tabs){
 			GameObject slate = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -59,7 +64,7 @@ public class OptionCtrl : MonoBehaviour {
 			int fontMod = 0;
 
 			if(name.Length >= 2)
-				fontMod = (name.Length - 2)*2;
+				fontMod = (int)(name.Length)/2;
 
 			int fontSize = maxFont - fontMod;
 
@@ -67,19 +72,21 @@ public class OptionCtrl : MonoBehaviour {
 			
 			label.transform.parent = tag.transform;
 			label.transform.position = tag.transform.position + labelOffset;
-			//label.transform.localScale = Vector3.one * Random.Range(0.01f,0.1f);
 			float slateLeft = slate.collider.bounds.center.x - slate.collider.bounds.size.x/2;
 			float slateTop = slate.collider.bounds.center.y + slate.collider.bounds.size.y/2;
 			int j = 1;
+			List<GameObject> optList = new List<GameObject>();
 			foreach(Options opt in tab.optionList){
 				GameObject optName = Instantiate(prefabText) as GameObject;
 				TextMesh OPTtMesh = optName.GetComponent<TextMesh>();
 				OPTtMesh.color = new Color(158, 210, 255);
-				OPTtMesh.text = opt.optionName;
+				OPTtMesh.text = opt.optionName + "\t\t" + opt.value.ToString();
+				OPTtMesh.alignment = TextAlignment.Left;
+				OPTtMesh.anchor = TextAnchor.LowerLeft;
+				OPTtMesh.tabSize = 300;
 				optName.transform.parent = slate.transform;
-				optName.transform.position = optName.transform.po + optOffset;
-
-
+				optName.transform.position = tag.transform.position + optOffset*j + new Vector3(.6f,-.55f,-1f);
+				optList.Add(optName);
 				j++;
 			}
 	
@@ -92,17 +99,14 @@ public class OptionCtrl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		int i = 0;
+		foreach(GameObject slate in slates){
+			if(i != curSlate)
+				slate.SetActive(false);
+		
+		}
 	}
 
-	/*void OnGui(){
-		foreach(Tab tab in tabs){
-			foreach(Options opt in tab.optionList){
-				Rect optionSize =  new Rect(slateLeft + 2, slateTop + 5*j, 5, 10);
-				GUI.TextField(optionSize, opt.value);
-				j++;
-			}
-		}
-	}*/
+
 }
 	

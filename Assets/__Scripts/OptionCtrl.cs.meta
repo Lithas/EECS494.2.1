@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 30ad0251c9f4d92418d1ff754168555c
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - tagMaterial: {fileID: 2100000, guid: 7b54f2aaec70ec142ae3c3041e46d314, type: 2}
+  - buttonMaterial: {fileID: 2100000, guid: 7b54f2aaec70ec142ae3c3041e46d314, type: 2}
+  - slateMaterial: {fileID: 2100000, guid: c19c0fe6f5ff30646bdadc9ff1c53ee7, type: 2}
+  - font: {fileID: 12800000, guid: 49e658c3f5a0d8448a58513fa8956810, type: 3}
+  - prefabText: {fileID: 100000, guid: e49a8e0072dc273409a7bb465665667a, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
